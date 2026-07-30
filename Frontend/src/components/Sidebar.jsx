@@ -4,7 +4,7 @@ import questionsData from '../assets/dummydata.js';
 import { Globe,Code,Layout,Cpu,Database, Coffee, Terminal,Star,Zap, Target,Sparkles,Trophy,Award,BookOpen, X, ChevronDown, ChevronRight,Menu, CheckCircle, XCircle} from 'lucide-react';
 import {toast} from 'react-toastify';
 import axios from 'axios';
-const API_BASE = "http://localhost:4000";
+const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000";
 
 function Sidebar() {
   const [selectedTech, setSelectedTech] = useState(null);

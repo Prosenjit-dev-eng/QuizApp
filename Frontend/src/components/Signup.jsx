@@ -25,7 +25,7 @@ function Signup({ onSignupSuccess = null }) {
       e.password = "Password must be at least 6 characters";
     return e;
   };
-    const API_BASE = "http://localhost:4000";
+    const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:4000"
 
     const handleSubmit = async (ev) => {
         ev.preventDefault();
@@ -248,7 +248,7 @@ function Signup({ onSignupSuccess = null }) {
                                 type='submit'
                                 disabled = {loading}
                                 className={signupStyles.submitButton}>
-                                    {loading ? "Creating acoount..." : "Create Account"}
+                                    {loading ? "Creating account..." : "Create Account"}
                                 </button>
                             </div>
                     </div>
