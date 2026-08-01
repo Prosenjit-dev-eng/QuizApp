@@ -16,6 +16,13 @@ const allowedOrigins = (process.env.CORS_ORIGINS || "http://localhost:5173")
   .map((value) => value.trim())
   .filter(Boolean);
 
+if (!allowedOrigins.includes("http://localhost:5173")) {
+  allowedOrigins.push("http://localhost:5173");
+}
+if (!allowedOrigins.includes("http://localhost:4173")) {
+  allowedOrigins.push("http://localhost:4173");
+}
+
 // Middleware
 app.use(
   cors({

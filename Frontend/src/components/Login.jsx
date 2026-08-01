@@ -25,7 +25,7 @@ function Login({onLoginSuccess = null}) {
         setLoading(true);
 
         try {
-            const payload = {email: email.trim().toLocaleLowerCase(),password};
+            const payload = {email: email.trim().toLowerCase(),password};
             const resp = await fetch(`${API_BASE}/api/auth/login`,{
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
@@ -126,7 +126,7 @@ function Login({onLoginSuccess = null}) {
                                     loginStyles.inputNormal
                                 }
                                 `}
-                                placeholder="your@exmaple.com"
+                                placeholder="your@example.com"
                                 required
                                 /> 
                             </div>
